@@ -1,0 +1,42 @@
+<%= form_with(model: rate, local: true) do |form| %>
+  <% if rate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rate.errors.count, "error") %> prohibited this rate from being saved:</h2>
+
+      <ul>
+      <% rate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :song_id %>
+    <%= form.text_field :song_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :favorite_id %>
+    <%= form.text_field :favorite_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :num_rate %>
+    <%= form.text_field :num_rate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :avg_rate %>
+    <%= form.text_field :avg_rate %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
